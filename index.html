@@ -8,6 +8,10 @@
 </head>
 <body>
     <h1>Automatic Timetable Maker</h1>
+    <button onclick="addSubject()">Add Subject</button>
+    <button onclick="arrange()">Arrange</button>
+    <p>Subjects:</p>
+    <p id="subject-array"></p>
     <table>
         <tr>
             <th>Num</th>
@@ -21,101 +25,101 @@
         <tr>
             <th>1</th>
             <th>7:10-7:55</th>
-            <td id="mo-1">Empty</td>
-            <td id="tu-1">Empty</td>
-            <td id="we-1">Empty</td>
-            <td id="th-1">Empty</td>
-            <td id="fr-1">Empty</td>
+            <td id="0">Empty</td>
+            <td id="1">Empty</td>
+            <td id="2">Empty</td>
+            <td id="3">Empty</td>
+            <td id="4">Empty</td>
         </tr>
         <tr>
             <th>2</th>
             <th>8:00-8:45</th>
-            <td id="mo-2">Empty</td>
-            <td id="tu-2">Empty</td>
-            <td id="we-2">Empty</td>
-            <td id="th-2">Empty</td>
-            <td id="fr-2">Empty</td>
+            <td id="5">Empty</td>
+            <td id="6">Empty</td>
+            <td id="7">Empty</td>
+            <td id="8">Empty</td>
+            <td id="9">Empty</td>
         </tr>
         <tr>
             <th>3</th>
             <th>8:50-9:35</th>
-            <td id="mo-3">Empty</td>
-            <td id="tu-3">Empty</td>
-            <td id="we-3">Empty</td>
-            <td id="th-3">Empty</td>
-            <td id="fr-3">Empty</td>
+            <td id="10">Empty</td>
+            <td id="11">Empty</td>
+            <td id="12">Empty</td>
+            <td id="13">Empty</td>
+            <td id="14">Empty</td>
         </tr>
         <tr>
             <th>4</th>
             <th>9:40-10:25</th>
-            <td id="mo-4">Empty</td>
-            <td id="tu-4">Empty</td>
-            <td id="we-4">Empty</td>
-            <td id="th-4">Empty</td>
-            <td id="fr-4">Empty</td>
+            <td id="15">Empty</td>
+            <td id="16">Empty</td>
+            <td id="17">Empty</td>
+            <td id="18">Empty</td>
+            <td id="19">Empty</td>
         </tr>
         <tr>
             <th>5</th>
             <th>10:40-11:25</th>
-            <td id="mo-5">Empty</td>
-            <td id="tu-5">Empty</td>
-            <td id="we-5">Empty</td>
-            <td id="th-5">Empty</td>
-            <td id="fr-5">Empty</td>
+            <td id="20">Empty</td>
+            <td id="21">Empty</td>
+            <td id="22">Empty</td>
+            <td id="23">Empty</td>
+            <td id="24">Empty</td>
         </tr>
         <tr>
             <th>6</th>
             <th>11:30-12:15</th>
-            <td id="mo-6">Empty</td>
-            <td id="tu-6">Empty</td>
-            <td id="we-6">Empty</td>
-            <td id="th-6">Empty</td>
-            <td id="fr-6">Empty</td>
+            <td id="25">Empty</td>
+            <td id="26">Empty</td>
+            <td id="27">Empty</td>
+            <td id="28">Empty</td>
+            <td id="29">Empty</td>
         </tr>
         <tr>
             <th>7</th>
             <th>12:20-13:05</th>
-            <td id="mo-7">Empty</td>
-            <td id="tu-7">Empty</td>
-            <td id="we-7">Empty</td>
-            <td id="th-7">Empty</td>
-            <td id="fr-7">Empty</td>
+            <td id="30">Empty</td>
+            <td id="31">Empty</td>
+            <td id="32">Empty</td>
+            <td id="33">Empty</td>
+            <td id="34">Empty</td>
         </tr>
         <tr>
             <th>8</th>
             <th>13:10-13:55</th>
-            <td id="mo-8">Empty</td>
-            <td id="tu-8">Empty</td>
-            <td id="we-8">Empty</td>
-            <td id="th-8">Empty</td>
-            <td id="fr-8">Empty</td>
+            <td id="35">Empty</td>
+            <td id="36">Empty</td>
+            <td id="37">Empty</td>
+            <td id="38">Empty</td>
+            <td id="39">Empty</td>
         </tr>
         <tr>
             <th>9</th>
             <th>14:00-14:45</th>
-            <td id="mo-9">Empty</td>
-            <td id="tu-9">Empty</td>
-            <td id="we-9">Empty</td>
-            <td id="th-9">Empty</td>
-            <td id="fr-9">Empty</td>
+            <td id="40">Empty</td>
+            <td id="41">Empty</td>
+            <td id="42">Empty</td>
+            <td id="43">Empty</td>
+            <td id="44">Empty</td>
         </tr>
         <tr>
             <th>10</th>
             <th>14:50-15:35</th>
-            <td id="mo-10">Empty</td>
-            <td id="tu-10">Empty</td>
-            <td id="we-10">Empty</td>
-            <td id="th-10">Empty</td>
-            <td id="fr-10">Empty</td>
+            <td id="45">Empty</td>
+            <td id="46">Empty</td>
+            <td id="47">Empty</td>
+            <td id="48">Empty</td>
+            <td id="49">Empty</td>
         </tr>
         <tr>
             <th>11</th>
             <th>15:40-16:25</th>
-            <td id="mo-11">Empty</td>
-            <td id="tu-11">Empty</td>
-            <td id="we-11">Empty</td>
-            <td id="th-11">Empty</td>
-            <td id="fr-11">Empty</td>
+            <td id="50">Empty</td>
+            <td id="51">Empty</td>
+            <td id="52">Empty</td>
+            <td id="53">Empty</td>
+            <td id="54">Empty</td>
         </tr>
     </table>
 
