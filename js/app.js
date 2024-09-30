@@ -49,18 +49,29 @@ function arrange() {
     let dummyCounterHeight = 0
     for (let i = 0; i < subjects.length; i++) {
         for (let j = 0; j < subjects[i].repetition; j++) {
+            if (dummyCounterHeight>=11) {
+                alert("Timetable out of range!")
+                return
+            }
             timetable[dummyCounterHeight][dummyCounterWidth] = subjects[i].name
             dummyCounterWidth += 1
             if (dummyCounterWidth>=5) {
                 dummyCounterWidth = 0
                 dummyCounterHeight +=1
             }
-            if (dummyCounterHeight>=11) {
-                alert("Timetable out of range!")
-                return
-            }
+
         }
     }
-
     console.log(timetable)
+}
+
+function display() {
+    let dummyCounter = 0
+
+    for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 5; j++) {
+            document.getElementById(dummyCounter).innerHTML = timetable[i][j]
+            dummyCounter+=1
+        }
+    }
 }
