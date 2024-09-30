@@ -12,29 +12,55 @@ const timetable = [
     ["Free", "Free", "Free", "Free", "Free"]    // Period 11
 ];
 
-let weekdays = ["mo", "tu", "we", "th", "fr"]
-
-let subjects = [];
-let fillCount = 0;
+let subjects = []
 
 
+// Adding subjects to the array, checking validity of name and repetition throughout the week
 function addSubject() {
-    const name = prompt("Insert subject name:");
-    const repetition = parseInt(prompt("Insert repetition"))
-
-    const newSubject = {
-        name: name,
-        repetition: repetition
+    let name = prompt("Input your subject")
+    if(name === null || name.trim() === "") {
+        alert("Wrong type of value!")
+    } else {
+        repetition = parseInt(prompt("Insert the repetition throughout the week"))
+        if (!isNaN(repetition) && repetition > 0 && repetition%1==0) {
+            const newSubject = {
+                name: name,
+                repetition: repetition
+            }
+            subjects.push(newSubject)
+        } else {
+            alert("Wrong type of value!")
+        }
     }
-    subjects.push(newSubject)
-    console.log(subjects)
 }
 
+// Clearing the timetable array, 
 function arrange() {
-    subjects.forEach(subject => {
-        for (let temp = 0; temp < subject.repetition; temp++) {
-            document.getElementById(fillCount).innerHTML = subject.name
-            fillCount++
+    for (let i = 0; i < 11; i++) {
+        for (let j = 0; j < 5; j++) {
+            timetable[i][j] = "Empty"
         }
-    });
+    }
+
+    console.log(subjects)
+
+    // Filling out the timetable array an keeping it going out of bounds
+    let dummyCounterWidth = 0
+    let dummyCounterHeight = 0
+    for (let i = 0; i < subjects.length; i++) {
+        for (let j = 0; j < subjects[i].repetition; j++) {
+            timetable[dummyCounterHeight][dummyCounterWidth] = subjects[i].name
+            dummyCounterWidth += 1
+            if (dummyCounterWidth>=5) {
+                dummyCounterWidth = 0
+                dummyCounterHeight +=1
+            }
+            if (dummyCounterHeight>=11) {
+                alert("Timetable out of range!")
+                return
+            }
+        }
+    }
+
+    console.log(timetable)
 }
