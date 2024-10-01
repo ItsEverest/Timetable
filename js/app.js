@@ -45,6 +45,17 @@ function addClass() {
         timetable.push(dummyTimetable)
         classIdCounter += 1
 
+
+        let classSpaceHolder = document.getElementById('classSpace')
+        let button = document.createElement('button')
+        button.innerText = name
+        button.addEventListener('click', function() {
+            currentClassId = classesNames.indexOf(name)
+            console.log("currentClassId: " + currentClassId)
+        })
+        classSpaceHolder.append(button)
+
+
         console.log(classesNames)
         console.log("classIdCounter: " + classIdCounter)
         console.log(timetable)
@@ -73,13 +84,21 @@ function addSubject() {
     } else {
         repetition = parseInt(prompt("Insert the repetition throughout the week"))
         if (!isNaN(repetition) && repetition > 0 && repetition%1==0) {
-            const newSubject = {
-                name: name,
-                repetition: repetition
-            }
-            subjects[currentClassId].push(newSubject)
+            let teacher = prompt("Insert teacher '[SURNAME] [NAME]'")
+            if (hasTwoWords(teacher) == true) {
+                teacher = teacher.trim()
+                const newSubject = {
+                    name: name,
+                    repetition: repetition,
+                    teacher: teacher
+                }
+                subjects[currentClassId].push(newSubject)
 
-            console.log(subjects)
+                console.log(subjects)
+            } else {
+                alert("Wrong type of value!")
+            }
+
         } else {
             alert("Wrong type of value!")
         }
@@ -127,3 +146,20 @@ function display() {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function hasTwoWords(input) {
+    const words = input.trim().split(/\s+/);
+    return words.length === 2;
+  }
